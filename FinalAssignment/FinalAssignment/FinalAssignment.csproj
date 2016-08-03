@@ -75,18 +75,13 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewOrderViewModel.cs" />
     <Compile Include="ViewModels\OrdersViewModel.cs" />
-    <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -117,16 +112,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\FinalAssignment\InventoryDataInteraction\InventoryDataInteraction.csproj">
-      <Project>{f5bf90ba-a083-41c9-b1a4-f3bf6d66c132}</Project>
-      <Name>InventoryDataInteraction</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\FinalAssignment\InventoryData\InventoryData.csproj">
-      <Project>{826b2519-74ad-4f7b-ab77-9529ff38a88a}</Project>
-      <Name>InventoryData</Name>
-    </ProjectReference>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

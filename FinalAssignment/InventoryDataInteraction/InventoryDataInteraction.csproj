@@ -58,10 +58,6 @@
       <Project>{330acf0b-9109-4727-8b10-bff65701cbd6}</Project>
       <Name>InventoryDataMapping</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InventoryData\InventoryData.csproj">
-      <Project>{826b2519-74ad-4f7b-ab77-9529ff38a88a}</Project>
-      <Name>InventoryData</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -69,7 +65,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
- <!-- <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+  <!-- <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>

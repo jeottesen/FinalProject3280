@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:FinalAssignment.Views"
              mc:Ignorable="d" 
              Height="300" Width="300">
-    <Grid>
-            
-    </Grid>
+    <StackPanel Orientation="Vertical" >
+        <ContentControl x:Name="ActiveItem" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="Orders" Content="Orders" />
+            <Button x:Name="Inventory" Content="Inventory" />
+            <Button x:Name="NewOrders" Content="New Orders" />
+        </StackPanel>
+    </StackPanel>
 </UserControl>

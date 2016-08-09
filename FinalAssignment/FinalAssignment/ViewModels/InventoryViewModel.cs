@@ -12,7 +12,7 @@ namespace FinalAssignment.ViewModels
     class InventoryViewModel : PropertyChangedBase
     {
         private IInventoryData InventoryData;
-        private ObservableCollection<Item> inventory;
+        private List<Item> inventory;
 
         public List<Item> Inventory
         {
@@ -20,7 +20,7 @@ namespace FinalAssignment.ViewModels
             set
             {
                 inventory = value;
-                NotifyOfPropertyChange("Inventory");
+                NotifyOfPropertyChange(() => Inventory);
             }
         }
 

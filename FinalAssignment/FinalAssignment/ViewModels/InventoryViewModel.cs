@@ -14,7 +14,7 @@ namespace FinalAssignment.ViewModels
         private IInventoryData InventoryData;
         private ObservableCollection<Item> inventory;
 
-        public ObservableCollection<Item> Inventory
+        public List<Item> Inventory
         {
             get { return inventory; }
             set
@@ -27,7 +27,7 @@ namespace FinalAssignment.ViewModels
         public InventoryViewModel(IInventoryData data)
         {
             InventoryData = data;
-            Inventory = InventoryData.GetItems() as ObservableCollection<Item>;
+            Inventory = InventoryData.GetItems() as List<Item>;
         }
     }
 }

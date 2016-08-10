@@ -10,15 +10,13 @@ namespace FinalAssignment
     class DummyData : IInventoryData
     {
         private List<Item> Items;
-        private List<OrderItem> OrderItems;
-        private List<Order> Orders;
 
         public DummyData()
         {
             Items = new List<Item>();
             OrderItems = new List<OrderItem>();
             Orders = new List<Order>();
-
+            
             User Purchaser1 = new User();
             Purchaser1.Name = "Purchaser 1";
             User Purchaser2 = new User();

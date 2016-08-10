@@ -10,6 +10,8 @@ namespace FinalAssignment
     class DummyData : IInventoryData
     {
         private List<Item> Items;
+        private List<Order> Orders;
+        private List<OrderItem> OrderItems; 
 
         public DummyData()
         {

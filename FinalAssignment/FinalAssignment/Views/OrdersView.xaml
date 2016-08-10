@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FinalAssignment.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <TextBox Text="Orders View" />
-    </Grid>
+              d:DesignHeight="480" d:DesignWidth="650">
+    <StackPanel>
+        <DataGrid x:Name="Orders" Height="250" />
+        <DataGrid x:Name="SelectedOrder_OrderItems" Height="250" />
+    </StackPanel>
 </UserControl>

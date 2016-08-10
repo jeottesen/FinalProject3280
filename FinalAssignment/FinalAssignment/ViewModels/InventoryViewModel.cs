@@ -12,9 +12,9 @@ namespace FinalAssignment.ViewModels
     class InventoryViewModel : PropertyChangedBase
     {
         private IInventoryData InventoryData;
-        private List<Item> inventory;
+        private ObservableCollection<Item> inventory;
 
-        public List<Item> Inventory
+        public ObservableCollection<Item> Inventory
         {
             get { return inventory; }
             set
@@ -27,7 +27,7 @@ namespace FinalAssignment.ViewModels
         public InventoryViewModel(IInventoryData data)
         {
             InventoryData = data;
-            Inventory = new List<Item>(InventoryData.GetItems());
+            Inventory = new ObservableCollection<Item>(InventoryData.GetItems());
         }
     }
 }

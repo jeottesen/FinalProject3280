@@ -39,6 +39,9 @@ namespace FinalAssignment
             OrderItems.Add(new OrderItem { OrderNumber = Orders[0].OrderNumber, ItemNumber = Items[3].ItemNumber, Item = Items[3], ItemCost = Items[3].Cost, Quantity = 3, Order = Orders[0], OrderItemNumber = 123 });
             OrderItems.Add(new OrderItem { OrderNumber = Orders[0].OrderNumber, ItemNumber = Items[1].ItemNumber, Item = Items[1], ItemCost = Items[1].Cost, Quantity = 3, Order = Orders[0], OrderItemNumber = 123 });
 
+            Orders[0].OrderItems = new List<OrderItem>();
+            Orders[0].OrderItems.Add(OrderItems[2]);
+
         }
 
         public IEnumerable<Item> GetItems()

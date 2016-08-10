@@ -24,16 +24,19 @@ namespace FinalAssignment.ViewModels
         public void Orders()
         {
             ActivateItem(ovm);
+            DisplayName = "Orders";
         }
 
         public void Inventory()
         {
             ActivateItem(ivm);
+            DisplayName = "Inventory";
         }
 
         public void NewOrders()
         {
             ActivateItem(novm);
+            DisplayName = "New Orders";
         }
     }
 }

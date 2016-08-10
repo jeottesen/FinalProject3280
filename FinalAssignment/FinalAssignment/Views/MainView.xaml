@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FinalAssignment.Views"
              mc:Ignorable="d" 
-             Height="500" Width="650">
+             Height="400" Width="500">
     
     <StackPanel Orientation="Vertical"  >
-        <ContentControl x:Name="ActiveItem" Height="480"/>
+        <ContentControl x:Name="ActiveItem" Height="380"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="Orders" Content="Orders" />
-            <Button x:Name="Inventory" Content="Inventory" />
-            <Button x:Name="NewOrders" Content="New Orders" />
+            <Button x:Name="Orders" Content="Orders" Width="150" />
+            <Button x:Name="Inventory" Content="Inventory" Width="150" />
+            <Button x:Name="NewOrders" Content="New Orders" Width="150" />
         </StackPanel>
     </StackPanel>
 </UserControl>

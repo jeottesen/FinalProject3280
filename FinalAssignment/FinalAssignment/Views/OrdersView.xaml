@@ -5,9 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FinalAssignment.Views"
              mc:Ignorable="d" 
-              d:DesignHeight="480" d:DesignWidth="650">
+             d:DesignHeight="380" d:DesignWidth="500">
     <StackPanel>
-        <DataGrid x:Name="Orders" Height="250" />
-        <DataGrid x:Name="SelectedOrder_OrderItems" Height="250" />
+        <DataGrid x:Name="Orders" Height="190" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=OrderNumber}" Header="Order Number" />
+                <DataGridTextColumn Binding="{Binding Path=DatePlaced}" Header="Date Placed" />
+                <DataGridTextColumn Binding="{Binding Path=Purchaser.Name}" Header="Purchaser" />
+                <DataGridTextColumn Binding="{Binding Path=TotalCost, StringFormat=C}" Header="Order Total" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="SelectedOrder_OrderItems" Height="190" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Item.ItemNumber}" Header="Item Number" />
+                <DataGridTextColumn Binding="{Binding Path=Item.Name}" Header="Item Name" />
+                <DataGridTextColumn Binding="{Binding Path=Item.Cost, StringFormat=C}" Header="Item Cost" />
+                <DataGridTextColumn Binding="{Binding Path=Quantity}" Header="Quantity Purchased" />
+                <DataGridTextColumn Binding="{Binding Path=ItemCost, StringFormat=C}" Header="Cost Paid Per Item" />
+            </DataGrid.Columns>
+        </DataGrid>
     </StackPanel>
 </UserControl>

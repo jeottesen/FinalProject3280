@@ -5,8 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FinalAssignment.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="480" d:DesignWidth="650">
+             d:DesignHeight="380" d:DesignWidth="500">
     <Grid>
-        <DataGrid x:Name="Inventory" />
+        <DataGrid x:Name="Inventory" Height="380"  AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ItemNumber}" Header="Item Number" />
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" />
+                <DataGridTextColumn Binding="{Binding Path=Cost, StringFormat=C}" Header="Cost" />
+                <DataGridTextColumn Binding="{Binding Path=QuantityOnHand}" Header="Quantity on Hand" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

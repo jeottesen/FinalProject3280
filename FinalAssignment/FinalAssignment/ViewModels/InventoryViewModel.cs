@@ -27,7 +27,7 @@ namespace FinalAssignment.ViewModels
         public InventoryViewModel(IInventoryData data)
         {
             InventoryData = data;
-            Inventory = InventoryData.GetItems() as List<Item>;
+            Inventory = new List<Item>(InventoryData.GetItems());
         }
     }
 }

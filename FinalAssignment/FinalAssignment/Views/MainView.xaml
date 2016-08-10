@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              Height="300" Width="300">
     <StackPanel Orientation="Vertical" >
-        <ContentControl x:Name="ActiveItem" />
+        <ContentControl x:Name="ActiveItem" Height="275"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="Orders" Content="Orders" />
             <Button x:Name="Inventory" Content="Inventory" />

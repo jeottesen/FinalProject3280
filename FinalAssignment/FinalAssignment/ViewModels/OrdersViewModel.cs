@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace FinalAssignment.ViewModels
 {
-    class OrdersViewModel : PropertyChangedBase
+    class OrdersViewModel : Screen
     {
 
         private IInventoryData InventoryData;
-
+        // make our observable orders and tehn return the data from inventoryData and add into selectedOrder
         private ObservableCollection<Order> orders;
+        // holds all of the orders
         public ObservableCollection<Order> Orders
         {
             get { return orders; }
@@ -26,6 +27,7 @@ namespace FinalAssignment.ViewModels
         }
 
         private Order selectedOrder;
+        // filled in by caliburn automatically when you select an order in the data grid. 
         public Order SelectedOrder
         {
             get { return selectedOrder; }
@@ -38,8 +40,11 @@ namespace FinalAssignment.ViewModels
 
         public OrdersViewModel(IInventoryData data)
         {
+            // from bootstrapper to get dependency injection from the inventory class 
             InventoryData = data;
+            // get all orders and insert get all the orders from the dummy data
             Orders = new ObservableCollection<Order>(InventoryData.GetOrders());
+            // shows the first item automatically
             SelectedOrder = Orders[0];
         }
     }

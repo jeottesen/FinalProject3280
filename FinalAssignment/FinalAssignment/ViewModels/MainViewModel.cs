@@ -13,14 +13,16 @@ namespace FinalAssignment.ViewModels
         private InventoryViewModel ivm;
         private NewOrderViewModel novm;
 
+        
         public MainViewModel(OrdersViewModel ordersVM, InventoryViewModel inventoryVM, NewOrderViewModel newOrdersVM)
-        {
+        { 
+            // pulls the views in and assigns them to activateItem method that was created by caliburn
             ovm = ordersVM;
             ivm = inventoryVM;
             novm = newOrdersVM;
             Orders();
         }
-
+        // these change the title of the window and links to the orders button and activates OrderViewModel
         public void Orders()
         {
             ActivateItem(ovm);

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FinalAssignment.ViewModels
 {
-    class InventoryViewModel : PropertyChangedBase
+    class InventoryViewModel : Screen
     {
         private IInventoryData InventoryData;
         private ObservableCollection<Item> inventory;

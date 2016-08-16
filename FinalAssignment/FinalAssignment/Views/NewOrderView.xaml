@@ -7,6 +7,62 @@
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="500">
     <Grid>
-        <TextBox Text="New Order View!" />
+        <StackPanel Orientation="Vertical" Background="Azure" >
+        
+            <TextBox Text="Create New Order" TextAlignment="Center"  FontSize="20"/>
+            
+            <Separator />
+            
+            <Grid HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Order Number: " />
+                <TextBox x:Name="Order_OrderNumber"  Grid.Row="0" Grid.Column="1" Width="100" />
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Purchase Date: " />
+                <TextBox x:Name="Order_DatePlaced" Grid.Row="1" Grid.Column="1" Width="100" />
+            
+            
+                <Label Grid.Row="2" Grid.Column="0" Content="Purchaser: " />
+                <TextBox x:Name="Purchaser_Name" Grid.Row="2" Grid.Column="1" Width="100" />
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Order Total: " />
+                <TextBox x:Name="OrderTotal" Grid.Row="3" Grid.Column="1" Width="100" />
+            
+        </Grid>
+        <Label Content="Order Total" />
+            <DataGrid x:Name="OrderItems" Height="195" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=CurrentOrder.OrderNumber}" Header="Order Number" />
+                    <DataGridTextColumn Binding="{Binding Path=SelectedOrderItem.Quantity}" Header="Quantity" />
+                    <DataGridTextColumn Binding="{Binding Path=SelectedOrderItem.ItemCost}" Header="Cost Per Item" />
+                    <DataGridComboBoxColumn SelectedValueBinding="{Binding SelectedItem}" DisplayMemberPath="Name" Header="Item">
+                        <DataGridComboBoxColumn.ElementStyle>
+                            <Style TargetType="ComboBox">
+                                <Setter Property="ItemsSource" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.Items}"/>
+                                <Setter Property="SelectedItem" Value="{Binding SelectedItem}" />
+                            </Style>
+                        </DataGridComboBoxColumn.ElementStyle>
+                        <DataGridComboBoxColumn.EditingElementStyle>
+                            <Style TargetType="ComboBox">
+                                <Setter Property="ItemsSource" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.Items}"/>
+                                <Setter Property="SelectedItem" Value="{Binding SelectedItem}" />
+                            </Style>
+                        </DataGridComboBoxColumn.EditingElementStyle>
+                    </DataGridComboBoxColumn>
+                </DataGrid.Columns>
+                
+            </DataGrid>
+            <Button x:Name="SaveOrder"  Content="Save Order" />
+        </StackPanel>
     </Grid>
 </UserControl>

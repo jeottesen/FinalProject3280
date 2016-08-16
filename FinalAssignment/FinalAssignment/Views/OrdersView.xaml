@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="500">
     <StackPanel>
-        <DataGrid x:Name="Orders" Height="190" AutoGenerateColumns="False" >
+        <DataGrid x:Name="Orders" Height="190" AutoGenerateColumns="False" Background="LightCyan" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=OrderNumber}" Header="Order Number" />
                 <DataGridTextColumn Binding="{Binding Path=DatePlaced}" Header="Date Placed" />

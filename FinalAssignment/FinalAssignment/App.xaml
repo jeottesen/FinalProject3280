@@ -6,8 +6,11 @@
         <Application.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
-                    <ResourceDictionary>
+                <ResourceDictionary Source="Styles\Styles.xaml"></ResourceDictionary>
+                <ResourceDictionary>
+                    
                         <local:AppBootstrapper x:Key="bootstrapper" />
+                   
                     </ResourceDictionary>
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>

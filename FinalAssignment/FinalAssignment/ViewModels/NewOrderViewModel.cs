@@ -7,6 +7,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InventoryDataInteraction;
+using InventoryDataMapping.Models;
 
 namespace FinalAssignment.ViewModels
 {
@@ -39,9 +41,9 @@ namespace FinalAssignment.ViewModels
             }
         }
 
-        private User purchaser;
+        private ObservableCollection<User> purchaser;
 
-        public User Purchaser
+        public ObservableCollection<User> Purchaser
         {
             get { return purchaser; }
             set
@@ -75,18 +77,6 @@ namespace FinalAssignment.ViewModels
             }
         }
 
-        private User selectedOrderUser;
-
-        public User SelectedOrderUser
-        {
-            get { return selectedOrderUser; }
-            set
-            {
-                selectedOrderUser = value;
-                NotifyOfPropertyChange(() => SelectedOrderUser);
-            }
-        }
-
         private ObservableCollection<Item> items;
 
         public ObservableCollection<Item> Items
@@ -96,6 +86,18 @@ namespace FinalAssignment.ViewModels
             {
                 items = value;
                 NotifyOfPropertyChange(() => Items);
+            }
+        }
+
+        private ObservableCollection<User> users;
+
+        public ObservableCollection<User> Users
+        {
+            get { return users; }
+            set
+            {
+                users = value;
+                NotifyOfPropertyChange(() => Users);
             }
         }
 
@@ -111,15 +113,15 @@ namespace FinalAssignment.ViewModels
             }
         }
 
-        private Item selectedUser;
+        private User selectedUser;
 
-        public Item SelectedUser
+        public User SelectedUser
         {
             get { return selectedUser; }
             set
             {
                 selectedUser = value;
-                NotifyOfPropertyChange(() => SelectedOrderUser);
+                NotifyOfPropertyChange(() => SelectedUser);
             }
         }
 
@@ -128,7 +130,7 @@ namespace FinalAssignment.ViewModels
             InventoryData = data;
             Order = new Order();
             Order.DatePlaced = DateTime.Now;
-            Purchaser = new User();
+            Purchaser = new ObservableCollection<User>(InventoryData.GetUsers());
             OrderItems = new ObservableCollection<OrderItem>();
             Items = new ObservableCollection<Item>(InventoryData.GetItems());
             SelectedItem = Items[0];
@@ -147,12 +149,10 @@ namespace FinalAssignment.ViewModels
                 OrderTotal += order.Quantity * order.Item.Cost;
             }
 
-            Order.Purchaser = Purchaser;
+            Order.Purchaser = SelectedUser;
             Order.OrderItems = OrderItems;
             Order.TotalCost = OrderTotal;
             InventoryData.SaveOrder(Order);
         }
-
-   
     }
 }

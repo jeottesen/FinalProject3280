@@ -27,13 +27,17 @@ namespace InventoryData
 		/// <param name="orderNumber">The id number for the order to which these order items belong</param>
 		/// <remarks>You will need to populate the item records for each order item as well</remarks>
 		IEnumerable<OrderItem> GetOrderItems(int orderNumber);
-
-		/// <summary>
-		/// Saves the given order to the database
-		/// </summary>
-		/// <param name="order" cref="InventoryData.Order">Order to be saved</param>
-		/// <returns>Whether or not the save was successful</returns>
-		bool SaveOrder(Order order);
+        /// <summary>
+        /// Retrieves all user records from the database
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<User> GetUsers();
+        /// <summary>
+        /// Saves the given order to the database
+        /// </summary>
+        /// <param name="order" cref="InventoryData.Order">Order to be saved</param>
+        /// <returns>Whether or not the save was successful</returns>
+        bool SaveOrder(Order order);
 		/// <summary>
 		/// Saves the given item to the database
 		/// </summary>

@@ -12,6 +12,7 @@ namespace FinalAssignment
         private List<Item> Items;
         private List<OrderItem> OrderItems;
         private List<Order> Orders;
+        private List<User> Users;
 
         public DummyData()
         {
@@ -23,6 +24,9 @@ namespace FinalAssignment
             Purchaser1.Name = "Purchaser 1";
             User Purchaser2 = new User();
             Purchaser2.Name = "Purchaser 2";
+
+            Users.Add(Purchaser1);
+            Users.Add(Purchaser2);
 
 
             Items.Add(new Item() { ItemNumber = 1, Cost = 2.3M, Name = "Item 1", QuantityOnHand = 3 });
@@ -77,6 +81,15 @@ namespace FinalAssignment
             foreach (Order o in Orders)
             {
                 yield return o;
+            }
+            //return Orders;
+        }
+
+        public IEnumerable<User> GetUsers()
+        {
+            foreach (User u in Users)
+            {
+                yield return u;
             }
             //return Orders;
         }

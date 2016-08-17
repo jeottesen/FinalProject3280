@@ -33,6 +33,7 @@ namespace InventoryDataInteraction
 						select item).ToList();
 			}
 		}
+        
 
         public IEnumerable<OrderItem> GetOrderItems(int orderNumber)
 		{
@@ -44,7 +45,16 @@ namespace InventoryDataInteraction
 			}
 		}
 
-		public bool SaveOrder(Order order)
+        public IEnumerable<User> GetUsers()
+        {
+            using (var db = new InventoryContext())
+            {
+                return (from user in db.Users
+                        select user).ToList();
+            }
+        }
+
+        public bool SaveOrder(Order order)
 		{
 			if (order == null)
 				return false;
@@ -110,15 +120,6 @@ namespace InventoryDataInteraction
 			catch(Exception e)
 			{
 				return false;
-			}
-		}
-
-		public IEnumerable<User> GetUsers()
-		{
-			using (var db = new InventoryContext())
-			{
-				return (from user in db.Users
-						select user).ToList();
 			}
 		}
 

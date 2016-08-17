@@ -19,6 +19,7 @@ namespace FinalAssignment
             Items = new List<Item>();
             OrderItems = new List<OrderItem>();
             Orders = new List<Order>();
+            Users = new List<User>();
             
             User Purchaser1 = new User();
             Purchaser1.Name = "Purchaser 1";
@@ -54,7 +55,6 @@ namespace FinalAssignment
             {
                 yield return i;
             }
-            //return Items
         }
 
         public Task<IEnumerable<Item>> GetItemsAsync()
@@ -68,7 +68,6 @@ namespace FinalAssignment
             {
                 yield return oi;
             }
-            //return OrderItems;
         }
 
         public Task<IEnumerable<OrderItem>> GetOrderItemsAsync(int orderNumber)
@@ -82,7 +81,6 @@ namespace FinalAssignment
             {
                 yield return o;
             }
-            //return Orders;
         }
 
         public IEnumerable<User> GetUsers()
@@ -91,7 +89,6 @@ namespace FinalAssignment
             {
                 yield return u;
             }
-            //return Orders;
         }
 
         public Task<IEnumerable<Order>> GetOrdersAsync()

@@ -26,22 +26,22 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0" Content="Order Number: " />
-                <TextBox Text="{Binding Order.OrderNumber, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="0" Grid.Column="1" Width="100" />
+                <TextBox Text="{Binding Order.OrderNumber, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="0" Grid.Column="1" IsReadOnly="True" />
 
                 <Label Grid.Row="1" Grid.Column="0" Content="Purchase Date: " />
-                <TextBox Text="{Binding Order.DatePlaced, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="1" Width="100" />
+                <TextBox Text="{Binding Order.DatePlaced, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="1"/>
 
 
                 <Label Grid.Row="2" Grid.Column="0" Content="Purchaser: " />
-                <ComboBox x:Name="Users" DisplayMemberPath="Name" Grid.Row="2" Grid.Column="1" Width="100" />
+                <ComboBox x:Name="Users" DisplayMemberPath="Name" Grid.Row="2" Grid.Column="1"/>
                 <Label Grid.Row="3" Grid.Column="0" Content="Order Total: " />
-                <TextBox Text="{Binding OrderTotal, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="3" Grid.Column="1" Width="100" />
+                <TextBox Text="{Binding OrderTotal, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="3" Grid.Column="1" IsReadOnly="True" />
             
         </Grid>
         <Label Content="Order Total" />
             <DataGrid x:Name="OrderItems" Height="195" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path=Order.OrderNumber,  UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Header="Order Number" />
+                    <DataGridTextColumn Binding="{Binding Path=Order.OrderNumber,  UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Header="Order Number" IsReadOnly="True"/>
                     <DataGridTextColumn Binding="{Binding Path=Quantity}" Header="Quantity" />
                     <DataGridTextColumn Binding="{Binding Path=Item.Cost}" Header="Cost Per Item" />
                     <DataGridTemplateColumn Header="Item">

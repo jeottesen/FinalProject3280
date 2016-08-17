@@ -41,17 +41,6 @@ namespace FinalAssignment.ViewModels
             }
         }
 
-        private ObservableCollection<User> purchaser;
-
-        public ObservableCollection<User> Purchaser
-        {
-            get { return purchaser; }
-            set
-            {
-                purchaser = value;
-                NotifyOfPropertyChange(() => Purchaser);
-            }
-        }
 
         private ObservableCollection<OrderItem> orderItems;
 
@@ -128,13 +117,20 @@ namespace FinalAssignment.ViewModels
         public NewOrderViewModel(IInventoryData data)
         {
             InventoryData = data;
+            int ordernumber = 0;
+            foreach(Order o in InventoryData.GetOrders())
+            {
+                ordernumber = Math.Max(o.OrderNumber, ordernumber);
+            }
             Order = new Order();
+            Order.OrderNumber = ordernumber;
             Order.DatePlaced = DateTime.Now;
-            Purchaser = new ObservableCollection<User>(InventoryData.GetUsers());
+            Users = new ObservableCollection<User>(InventoryData.GetUsers());
             OrderItems = new ObservableCollection<OrderItem>();
             Items = new ObservableCollection<Item>(InventoryData.GetItems());
             SelectedItem = Items[0];
             SelectedOrderItem = new OrderItem();
+            SelectedOrderItem.OrderNumber = ordernumber;
         }
 
         public void SaveOrder()

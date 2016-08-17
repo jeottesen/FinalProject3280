@@ -25,12 +25,14 @@ namespace FinalAssignment.ViewModels
         // these change the title of the window and links to the orders button and activates OrderViewModel
         public void Orders()
         {
+            ovm.Update();
             ActivateItem(ovm);
             DisplayName = "Orders";
         }
 
         public void Inventory()
         {
+            ivm.Update();
             ActivateItem(ivm);
             DisplayName = "Inventory";
         }

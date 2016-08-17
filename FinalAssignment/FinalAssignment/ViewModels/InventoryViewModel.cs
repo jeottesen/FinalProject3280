@@ -29,5 +29,10 @@ namespace FinalAssignment.ViewModels
             InventoryData = data;
             Inventory = new ObservableCollection<Item>(InventoryData.GetItems());
         }
+
+        public void Update()
+        {
+            Inventory = new ObservableCollection<Item>(InventoryData.GetItems());
+        }
     }
 }

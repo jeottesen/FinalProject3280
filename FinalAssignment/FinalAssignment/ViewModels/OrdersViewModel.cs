@@ -44,8 +44,15 @@ namespace FinalAssignment.ViewModels
             InventoryData = data;
             // get all orders and insert get all the orders from the dummy data
             Orders = new ObservableCollection<Order>(InventoryData.GetOrders());
-            // shows the first item automatically
-            SelectedOrder = Orders[0];
+            // shows the first item automatically if there is any
+            if (Orders.Any())
+                SelectedOrder = Orders[0];
+        }
+
+        public void Update()
+        {
+            Orders = new ObservableCollection<Order>(InventoryData.GetOrders());
         }
     }
+
 }

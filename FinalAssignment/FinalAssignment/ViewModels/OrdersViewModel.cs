@@ -48,5 +48,11 @@ namespace FinalAssignment.ViewModels
             if (Orders.Any())
                 SelectedOrder = Orders[0];
         }
+
+        public void Update()
+        {
+            Orders = new ObservableCollection<Order>(InventoryData.GetOrders());
+        }
     }
+
 }

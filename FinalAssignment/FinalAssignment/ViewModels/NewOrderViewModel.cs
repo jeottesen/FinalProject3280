@@ -75,6 +75,18 @@ namespace FinalAssignment.ViewModels
             }
         }
 
+        private User selectedOrderUser;
+
+        public User SelectedOrderUser
+        {
+            get { return selectedOrderUser; }
+            set
+            {
+                selectedOrderUser = value;
+                NotifyOfPropertyChange(() => SelectedOrderUser);
+            }
+        }
+
         private ObservableCollection<Item> items;
 
         public ObservableCollection<Item> Items
@@ -96,6 +108,18 @@ namespace FinalAssignment.ViewModels
             {
                 selectedItem = value;
                 NotifyOfPropertyChange(() => SelectedOrderItem);
+            }
+        }
+
+        private Item selectedUser;
+
+        public Item SelectedUser
+        {
+            get { return selectedUser; }
+            set
+            {
+                selectedUser = value;
+                NotifyOfPropertyChange(() => SelectedOrderUser);
             }
         }
 

@@ -34,7 +34,7 @@ namespace InventoryDataInteraction
 			}
 		}
 
-		public IEnumerable<OrderItem> GetOrderItems(int orderNumber)
+        public IEnumerable<OrderItem> GetOrderItems(int orderNumber)
 		{
 			using (var db = new InventoryContext())
 			{

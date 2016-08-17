@@ -118,6 +118,7 @@ namespace FinalAssignment.ViewModels
             foreach (OrderItem order in OrderItems)
             {
                 order.OrderNumber = Order.OrderNumber;
+                order.Order = Order;
                 order.ItemCost = order.Item.Cost;
                 OrderTotal += order.Quantity * order.Item.Cost;
             }

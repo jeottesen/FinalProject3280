@@ -46,6 +46,12 @@ namespace FinalAssignment.ViewModels
             Orders = new ObservableCollection<Order>(InventoryData.GetOrders());
             // shows the first item automatically
             SelectedOrder = Orders[0];
+        
+        }
+
+        public void Update()
+        {
+            Orders = new ObservableCollection<Order>(InventoryData.GetOrders());
         }
     }
 }

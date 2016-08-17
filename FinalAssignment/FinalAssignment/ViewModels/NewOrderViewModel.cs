@@ -3,6 +3,7 @@ using InventoryData;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,13 +27,13 @@ namespace FinalAssignment.ViewModels
             }
         }
 
-        private int orderTotal;
+        private decimal orderTotal;
 
-        public int OrderTotal
+        public decimal OrderTotal
         {
             get { return orderTotal;  }
             set
-            {S
+            {
                 orderTotal = value;
                 NotifyOfPropertyChange(() => OrderTotal);
             }
@@ -101,11 +102,32 @@ namespace FinalAssignment.ViewModels
         public NewOrderViewModel(IInventoryData data)
         {
             InventoryData = data;
+            Order = new Order();
+            Order.DatePlaced = DateTime.Now;
+            Purchaser = new User();
             OrderItems = new ObservableCollection<OrderItem>();
             Items = new ObservableCollection<Item>(InventoryData.GetItems());
-
-
+            SelectedItem = Items[0];
+            SelectedOrderItem = new OrderItem();
         }
 
+        public void SaveOrder()
+        {
+
+            OrderTotal = 0;
+            foreach (OrderItem order in OrderItems)
+            {
+                order.OrderNumber = Order.OrderNumber;
+                order.ItemCost = order.Item.Cost;
+                OrderTotal += order.Quantity * order.Item.Cost;
+            }
+
+            Order.Purchaser = Purchaser;
+            Order.OrderItems = OrderItems;
+            Order.TotalCost = OrderTotal;
+            InventoryData.SaveOrder(Order);
+        }
+
+   
     }
 }

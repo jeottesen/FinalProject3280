@@ -98,7 +98,8 @@ namespace FinalAssignment
 
         public bool SaveOrder(Order order)
         {
-            throw new NotImplementedException();
+            Orders.Add(order);
+            return true;
         }
 
         public Task<bool> SaveOrderAsync(Order order)

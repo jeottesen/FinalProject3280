@@ -32,8 +32,8 @@ namespace FinalAssignment
 			container.PerRequest<NewOrderViewModel>();
 			container.PerRequest<OrdersViewModel>();
 
-            //container.Singleton<IInventoryData, DatabaseInteraction>();
-            container.Singleton<IInventoryData, DummyData>();
+            container.Singleton<IInventoryData, DatabaseInteraction>();
+            //container.Singleton<IInventoryData, DummyData>();
         }
 
 		protected override object GetInstance(Type service, string key)

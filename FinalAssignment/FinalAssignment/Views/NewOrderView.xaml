@@ -41,18 +41,16 @@
         <Label Content="Order Total" />
             <DataGrid x:Name="OrderItems" Height="195" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path=Order.OrderNumber,  UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Header="Order Number" IsReadOnly="True"/>
-                    <DataGridTextColumn Binding="{Binding Path=Quantity}" Header="Quantity" />
-                    <DataGridTextColumn Binding="{Binding Path=Item.Cost}" Header="Cost Per Item" />
+                    <DataGridTextColumn Binding="{Binding Order.OrderNumber, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" Header="Order Number" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" />
+                    <DataGridTextColumn Binding="{Binding Item.Cost}" Header="Cost Per Item" />
                     <DataGridTemplateColumn Header="Item">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <ComboBox ItemsSource="{Binding Path=DataContext.Items, RelativeSource={RelativeSource  AncestorType={x:Type UserControl}}}" 
-                                            SelectedItem="{Binding Item, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay }" 
-                                            DisplayMemberPath="Name" 
-                                            SelectedValuePath="SelectedItem">
-
-                                </ComboBox>
+                                <ComboBox ItemsSource="{Binding DataContext.Items, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" 
+                					SelectedItem="{Binding Item, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                					DisplayMemberPath="Name" 
+                					SelectedValuePath="SelectedItem"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

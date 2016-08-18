@@ -11,7 +11,7 @@
     <Style TargetType="{x:Type DataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                <Setter Property="Background" Value="Yellow"></Setter>
+                <Setter Property="Background" Value="Gray"></Setter>
             </Trigger>
             <Trigger Property="ItemsControl.AlternationIndex" Value="1">
                 <Setter Property="Background" Value="LightBlue"></Setter>
@@ -20,18 +20,18 @@
     </Style>
     
     <Style TargetType="TextBox">
-        <Setter Property="Background" Value="Red"></Setter>
-        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="LightCyan"></Setter>
+        <Setter Property="FontSize" Value="10"></Setter>
         <Setter Property="FontWeight" Value="20"></Setter>
+        <Setter Property="Height" Value="20"></Setter>
 
     </Style>
 
    
     <Style TargetType="TextBox" x:Key="TextBoxStyle">
         <Setter Property="Width" Value="200"/>
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Margin" Value="4"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Height" Value="25"/>        
+        <Setter Property="FontSize" Value="10"/>
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
@@ -45,9 +45,10 @@
 
 
     <Style TargetType="Label">
-        <Setter Property="Background" Value="Green"></Setter>
-        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Teal"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
         <Setter Property="FontWeight" Value="20"></Setter>
+        <Setter Property="Height" Value="25"></Setter>
 
     </Style>
 

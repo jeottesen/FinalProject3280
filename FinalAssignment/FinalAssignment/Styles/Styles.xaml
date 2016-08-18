@@ -18,10 +18,38 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
     
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="Red"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="FontWeight" Value="20"></Setter>
+
+    </Style>
+
    
-     
+    <Style TargetType="TextBox" x:Key="TextBoxStyle">
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="White" Offset="0.0"/>
+                    <GradientStop Color="LightBlue" Offset="0.5"/>
+                    <GradientStop Color="Navy" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>   
+    </Style>
+
+
+    <Style TargetType="Label">
+        <Setter Property="Background" Value="Green"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="FontWeight" Value="20"></Setter>
+
+    </Style>
 
 
 

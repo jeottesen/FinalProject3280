@@ -8,8 +8,8 @@
              d:DesignHeight="380" d:DesignWidth="500">
     <Grid>
         <StackPanel Orientation="Vertical" >
-        
-            <TextBox Text="Create New Order" TextAlignment="Center"  FontSize="20"/>
+
+            <TextBox Style="{StaticResource TextBoxStyle}" Text="Create New Order" TextAlignment="Center"  FontSize="20"/>
             
             <Separator />
             
